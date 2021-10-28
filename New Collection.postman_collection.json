@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "d6d3e5e2-35e4-48db-9db4-7a7849580790",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user_info Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const schema = {\r",
+							"    \"type\": \"object\",\r",
+							"    \"properties\": {\r",
+							"        \"person\": { \"type\": \"object\",\r",
+							"            \"properties\":{\r",
+							"                \"u_age\": {\"type\": \"integer\"},\r",
+							"                \"u_name\": { \"type\": \"array\", \"minItems\": 1, \"maxItems\": 3, \r",
+							"                    \"items\": [\r",
+							"                        {\"type\": \"string\"},\r",
+							"                        {\"type\": \"integer\"},\r",
+							"                        {\"type\": \"integer\"}\r",
+							"                    ] \r",
+							"                },\r",
+							"                \"u_salary_1_5_year\": { \"type\": \"integer\" }\r",
+							"            },\r",
+							"            \"required\": [\"u_age\", \"u_name\", \"u_salary_1_5_year\"] \r",
+							"        },\r",
+							"    \"qa_salary_after_12_months\": { \"type\": \"integer\" },\r",
+							"    \"qa_salary_after_6_months\": { \"type\": \"integer\" },\r",
+							"    \"start_qa_salary\": { \"type\": \"integer\" }    \r",
+							"    },\r",
+							"    \"required\": [\"qa_salary_after_12_months\", \"qa_salary_after_6_months\", \"start_qa_salary\"]  \r",
+							"};\r",
+							"\r",
+							"pm.test(\"Validate schema\", () => {\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"let req = JSON.parse(request.data);\r",
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"salary\", function () {\r",
+							"    pm.expect(response.qa_salary_after_6_months).to.eql(req.salary*2);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"salary\", function () {\r",
+							"    pm.expect(response.qa_salary_after_12_months).to.eql(req.salary*2.9);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"salary\", () => {\r",
+							"    pm.expect(response.person.u_salary_1_5_year).to.eql(req.salary * 4);\r",
+							"pm.variables.get(\"variable_key\");\r",
+							"})\r",
+							"\r",
+							"let sendreq = {\r",
+							"    url: \"http://162.55.220.72:5005/get_test_user\",\r",
+							"    method: \"POST\",\r",
+							"    header: {},\r",
+							"    body: {\r",
+							"        mode: \"formdata\", \r",
+							"        formdata:[\r",
+							"        {key: \"auth_token\", value: pm.environment.get(\"token\"), disabled: false},\r",
+							"        {key: \"name\", value: pm.environment.get(\"name\"), disabled: false},\r",
+							"        {key: \"age\", value: pm.environment.get(\"age\"), disabled: false},\r",
+							"        {key: \"salary\", value: response.person.u_salary_1_5_year, disabled: false}]}\r",
+							"}\r",
+							"\r",
+							"pm.sendRequest(sendreq, function(err, res){\r",
+							"    console.log(res);\r",
+							"})\r",
+							"\r",
+							"console.log(pm.environment.get(\"token\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": \"{{age}}\",\r\n    \"salary\": \"{{salary}}\",\r\n    \"name\": \"{{name}}\",\r\n    \"auth_token\": \"{{token}}\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}user_info",
+					"host": [
+						"{{url}}user_info"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
