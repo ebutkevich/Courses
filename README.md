@@ -1,1 +1,1 @@
-# group_233
+Python: creating variables, performing arithmetic operations, writing loops, lists.
