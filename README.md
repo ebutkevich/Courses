@@ -1,1 +1,1 @@
-SQL. Application of basic commands: create, delete, drop, insert, select from, where, goin (inner, full, left, right).
+Application of basic SQL commands and operators: create, delete, drop, insert, select, where, join.
