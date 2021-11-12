@@ -1,1 +1,1 @@
-Python: creating variables, performing arithmetic operations, writing loops, lists.
+Python: create variables, perform arithmetic operations, write loops, lists.
