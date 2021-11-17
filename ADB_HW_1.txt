@@ -1,0 +1,34 @@
+ADB HW_1
+
+Сценарий напишите в .txt файл.
+.txt сценарий и .log файл прииложения todolist выгружайте на GitHub.
+Ссылкку на гитхаб присылайте в лс.
+
+ 1. Отобразить подключённый девайс в консоли:
+- загрузить Download SDK Platform-Tools for Windows
+-запускаем Power Shell 
+-заходим в папку с SDK Platform-Tools - сd
+-вводим девайс в режим разработчика
+-подключаем девайс к компьютеру
+-прописываем ./adb devices, получаем ответ с номером
+
+ 2. Вывести адрес приложения todolist в системе Android:
+./adb shell pm list "packages | grep todolist"
+
+ 3. Установить .apk файл приложениия todolist на телефон с компьютера через  ADB :
+-переходим в папку с приложнием- сd
+ -./adb install Todolist.apk
+
+ 4. Сделать скриншот запущенного приложения todolist и сразу скопировать на компьютер в одной команде:
+-adb shell screencap && adb pull
+-adb shell screencap - сохранение скриншота на телефон
+-adb pull - передача скриншота с телефона на компьютер
+
+ 5. Вывести в консоль логи приложения todolist:
+./adb shell "logcat |grep -rnw todolist"
+
+ 6. Скопировать логи приложения todolist на компьютер:
+ adb shell "logcat |grep -rnw todolist" > log_todolist.log 
+
+ 7. Удалить приложение todolist с телефона через ADB :
+adb uninstall com.android.todolist
