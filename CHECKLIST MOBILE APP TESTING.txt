@@ -1,0 +1,138 @@
+CHECKLIST MOBILE APP TESTING
+
+1.DEVICE SPECIFIC CHECKS
+1.1 		Can the app be installed on the device?
+1.2 		Does the app behave as designed/desired if there is an incoming call?	
+1.3 		Does the app behave as designed/desired if there is an incoming SMS?	
+1.4 		Does the app behave as designed/desired if the charger is connected?	
+1.5 		Does the app behave as designed/desired if the charger is disconnected?	
+1.6 		Does the app behave as designed/desired if the device goes to sleeping mode?
+1.7 		Does the app behave as designed/desired if the device resumes from sleeping mode?	
+1.8 		Does the app behave as designed/desired if the device resumes from lock screen? 	
+1.9 		Does the app behave as designed/desired if the device is tilted?	
+1.10 		Does the app behave as designed/desired if the device is shaken?	
+1.11 		Does the app behave as designed/desired if a local message is coming from another app (think of: calendar reminders, to-do task etc.).	
+1.12 		Does the app behave as designed/desired if a push message is coming from another app (think of: twitter mentions, whatsapp message, wordfeud invitation, etc).	
+1.13 		Does the app interact with the GPS sensor correctly (switch on/off, retrieve GPS data)?	
+1.14 		Is the functionality of all the buttons or keys on the device defined for this app?	
+1.15 		Verify that buttons or keys which have no defined function have no unexpected behaviour on the app when activating.	
+1.16 		In case there’s a true “back” button available on the device does the “back” button take the user to the previous screen?	
+1.17 		In case there’s a true “menu” button available on the device, does the menu button show the app’s menu?	
+1.18 		In case there’s a true “home” button available on the device, does the home button get the user back to the home screen of the device? 	
+1.19 		In case there’s a true “search” button available on the device, does this get the user to some form of search within the app? 	
+1.20 		Does the app behave as designed/desired if the “Battery low” message is pushed	
+1.21 		Does the app behave as designed/desired if the sound on the device is turned off?	
+1.22 		Does the app behave as designed/desired if the device is in airplane mode?	
+1.23 		Can the app be de-installed from the device?	
+1.24 		Does the application function as expected after re-installation?	
+1.25 		Can the app be found in the app store? (Check after go-live).
+1.26 		Can the app switch to different apps on the device through multitasking as designed/desired?	
+1.27 		Are all touch screen positions (buttons) working when a screen protector is used. 	
+
+
+2.NETWORK SPECIFIC CHECKS
+2.1 	  Does the app behave according to specification if connected to the internet through Wi-Fi?	
+2.2 		Does the app behave according to specification if connected to the internet through 3G?
+2.3 		Does the app behave according to specification if connected to the internet through 2G?	
+2.4 		Does the app behave according to specification of the app is out of network reach?
+2.5 		Does the app resume working when it gets back into network reach from outside reach of the network?	
+2.6 		Update transactions are processed correctly after re-establishing connection.	
+2.7 		Does the app still work correctly when tethering or otherwise connected to another device.
+2.8 		What happens if the app switches between networks (Wi-Fi, 3G, 2G).
+2.9 		Does the app use standard network ports (Mail: 25, 143, 465, 993 or 995 HTTP: 80 or 443 SFTP: 22) to connect to remote services, as some providers block certain ports.
+
+
+3.APP SPECIFIC CHECKS
+3.1 		Has the app been tested on different type of devices and different versions of OS?	
+3.2 		Stability check: if the app has a list (for instance of pictures) in it, try scrolling through it at high speed.	
+3.3 		Stability check: if the app has a list (for instance of pictures) in it, try scrolling to before the first picture or behind the last picture.	
+3.4 		Is downloading of the app prevented in case it’s bigger than the OS allows downloading when connected to cellular networks.  
+3.5 		Integration: does the app connect correctly to the different social networks (LinkedIn, twitter, facebook, etc).	
+3.6 		The app does not interfere with other apps when in background/multitasking mode (using GPS, playing music, etc.).
+3.7 		Can the user print from the app (if applicable).
+3.8 		The search option in the app displays relevant results.
+3.9 		Verify most common gestures used to contol the app.	
+3.10 		What happens if you select different options at the same time (undesired multitouch, for example – select two contacts from the phone book at the same time).
+3.11 		App name should be self explanatory.
+3.12 		Does the app limit or clean the amount of cached data.
+3.13 		Reloading of data from remote service has been properly designed to prevent performance issues at server-side. 
+3.14 		Does the app go to sleep mode when running in the background (prevent battery drain).
+
+
+4.APP USER INTERFACE CHECKS
+This checklist is based on the recommendations of Apple and some other experts. This checklist is not a substitute for a usability test, to get a good feeling of the user experience of an app a user experience test is always the most reliable method. User interface checks toelichten.
+4.1 		To keep controls as unobtrusive as possible for instance by fading them out if they are not used for a while.
+4.1 		Make it possible for users to go back to a previous screen for instance by adding a back or cancel button	.
+4.2 		The main function of the app should be apparent immediately. It should speak for itself.	
+4.3 		Use at most one action on the screen that is highlighted as the most likely for the user. (Example: in iOS a blue button represents the default or most likely action).	
+4.4 		Minimize user actions by using a picker or a table view where users can select a certain choice over a data entry field where users have to type a choice.
+4.5 		In an app, the user should not be able to store files locally, outside the app sandbox. 
+4.6 		In an app, the user should not be exposed to the permissions of a specific file	.
+4.7 		If there is a long list of data to scroll trough, provide a search option above the list.
+4.8 		If performance is slow, indicate a progress status icon (“Loading…”), preferably with specific message.	
+4.9 		In case of ‘live’ filtering of data while the user enters his search query, verify the performance.	
+4.10 		The appearance of buttons that perform standard actions are not altered in the app (for instance: refresh, organize, trash, Reply, back, etc.).
+4.11 		Do not use standard buttons for other functions then that they are normally used for.
+4.12 		The app should respond to all changes in device orientation, as per the design.
+4.13 		Tapable elements should be about 7x7 mm in size, using the pixel density of the target device you can calculate the amount of pixels (chapter documentation contains a link to different devices compared).
+4.14 		Do not redefine gestures in your app that have a standard meaning (example: swiping from top to bottom enables the notification center)
+4.15 		Requirement to login is delayed in the app as long as possible.
+4.16 		If the app is stopped at an unexpected time, user data should be saved locally and available at start-up.
+4.17 		Users should be warned of the consequences of deleting a document.
+4.18 		Keyboard adjusts to expected input (for instance numbers/letters when expected).	
+4.19 		Are inactive buttons clearly distinguished from active buttons?
+
+
+5.STORE SPECIFIC CHECKS
+These checks are important to be confident that an Apple app will pass the submission process of the app store.
+
+These checks are largely based on the apple App store guidelines. The other leading app store, Google Play, has much less strict demands. Other app stores like the Amazon app store have stronger restrictions, we’ve added them in a special paragraph in case they are relevant. 
+
+Keep in mind that the Apple app store submission process is not crystal clear. On many occasions, it is unclear why apps are rejected or accepted. Keep the following line in mind from the apple app review guidelines:
+
+Well, as a Supreme Court Justice once said, "I'll know it when I see it". And we think that you will also know it when you cross it.
+
+Note: the guidelines that are covered here are the ones that are special to the app store. For instance: Guideline 2.1 states that “Apps that crash will be rejected”. Making sure that an app doesn’t crash is not remedied by a simple check – it requires a functional test.  
+Second Note: Part of the iOS guidelines is the following guideline 10.1 Apps must comply with all the terms and conditions explained in the Apple iOS Human Interface guidelines. We’ve incorporated these in the Chapter “App user interface checks”. 
+So if you’re not planning to submit the app to an app store, these checks are not necessary? In principle, yes. However, many of these have relevance even if your app is not distributed through a store but for instance to a limited set of your employees. So these checks might still be useful.
+
+
+5.1 		The app can’t use any “non-public API’s”. This means that you can’t use some functions that the distributing platform uses for its own apps.  (This can generally be checked best by some sort of automated tool, like http://www.chimpstudios.com/appscanner/)
+5.2 		The app can’t reprogram controls of the device that are not intended for that use. (For instance: using the volume button as a shutter for the camera).
+5.3 		The app should not access information on the device outside the app without the user’s permission (for instance, copying the address book or getting information from other apps).	
+5.4 		The app should not access or write files outside the “Bundle” and “Documents” directory. (because the app can’t read or write data outside the designated container area). 	
+5.5 		The app cannot download code to be installed without the users consent.
+5.6 		The app can only get new functionality by way of an upgrade through the app store.
+5.7 		After download, an app should remain working. An app cannot turn off after a few days.	
+5.8 		An app can’t be a “trail”, “beta”, “demo” or “test” version. 
+5.9 		Apple product names should be spelled correctly in the app. (For instance: IPhonez is wrong).	
+5.10 		If the app uses the web, it is not done using third party (i.e. non-Apple) browsers.	
+5.11 		You cannot mention other app platforms in your app (for instance: “Also available on android!”)
+5.12 		An app cannot use old interfaces, like for instance the iPod click wheel.	
+5.13 		Multitasking functionality of the app can only be used for its intended purposes, i.e. VoIP, Audio playback, location, task completion, local notifications, etc. This means that generally an app can’t run in the background but has to be closed off if it’s not used any more. 
+5.14 		The app must have some functionality. For instance, it can’t be just a title page leading to some text.  It can’t be just a song, movie or book as there are different platforms for that. 	
+5.15 		Functionality should be in sync with functionality described in store.	
+5.16 		In general, the app has to be decent. So no explicit material in the sense of sex, violence, drugs, alcohol or tobacco. It cannot address a specific ethnic or religious group in a derogatory way. 
+5.17 		The app has to be honest. This means that the description of the app has to be correct, and all functionality has to work as described. If an app gives diagnostic information, it has to be reliable. This also means that the genre and category in the description must be appropriate. The app icons should be consistent and appropriate.
+5.18 		An app can’t restrict the users of the app for instance by location or carrier.	
+5.19 		An app cannot send spam or introduce viruses, or use other apple platforms like Game Center and Push Notifications to do so.	
+5.20 		The app should aim at backing up a minimum of information on iCloud. The information in iCloud should be just the user generated information. Information that can be recreated or downloaded should not be backed up.	
+5.21 		An app cannot use location services of the device without asking permission. 	
+5.22 		All url’s in the app code should be fully functional.
+5.23 		The app can’t use the user’s location without permission.	
+5.24 		The location services cannot be used to autonomously control of vehicles or for emergency services. 	
+5.25 		An app cannot use push notifications without user consent.	
+5.26 		Push notifications have to be send using the Apple Push Notification (APN) API. This has to be done using an APN ID. 	
+5.27 		Push notification can’t send personal information.
+5.28 		The App may not distribute any private information of users (like Player ID) through the game center.
+5.29 		Ad banners must be hidden when there are no ads available.	
+5.30 		The app must respect copyright of apple and other parties.	
+5.31 		The in app purchase mechanism cannot be used to purchase goods and services used outside the app.	
+5.32 		The in app purchase mechanism cannot be used to collect money for charities. This has to be done through SMS.	
+5.33 		The in app purchase mechanism cannot be used to buy a raffle or lottery ticket directly from the app.	
+5.34 		Apps that encourage the users to use the device in a way that may damage the device will be rejected.
+5.35 		An app cannot require user’s personal information (for instance email address) in order for it to function.	
+
+
+
+
